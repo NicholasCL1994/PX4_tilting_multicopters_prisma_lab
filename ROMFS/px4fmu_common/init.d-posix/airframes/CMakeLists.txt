@@ -87,5 +87,6 @@ px4_add_romfs_files(
 	25004_baby_k
 	25005_baby_k_interaction
 	25006_koala
+	25007_baby_andromeda
 	#######################
 )
