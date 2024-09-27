@@ -3,8 +3,8 @@
 /* Do not edit! */
 #pragma once
 
-#define PX4_GIT_VERSION_STR "0a9aedbadba839271d4e9c7103160a365012795f"
-#define PX4_GIT_VERSION_BINARY 0x0a9aedbadba83927
+#define PX4_GIT_VERSION_STR "ead28986369d63e62c8829fb6271193e97e63ae4"
+#define PX4_GIT_VERSION_BINARY 0xead28986369d63e6
 #define PX4_GIT_TAG_STR "v1.9.0-rc3-dirty"
 #define PX4_GIT_BRANCH_NAME "andromeda"
 

@@ -474,7 +474,7 @@ then
 fi
 
 #
-# Baby_k Tilting Octorotor-H-cox
+# Baby_andromeda Tilting Octorotor-H-cox
 if param compare SYS_AUTOSTART 25007
 then
 	set AIRFRAME 25007_baby_andromeda

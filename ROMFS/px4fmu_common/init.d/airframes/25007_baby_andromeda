@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# @name Baby_k Tilting Octorotor-H-cox
+# @name Baby_andromeda Tilting Octorotor-H-cox
 #
 # @type Tilting Multirotor
 # @class Copter
@@ -33,7 +33,7 @@ param set-default CA_AIRFRAME 11 #11 Tilting Multirotor, 0 multirotor
 
 set MAV_TYPE 14 #octorotor (0 is generic)
 param set-default MC_PITCH_ON_TILT 1
-param set-default CA_TILTING_TYPE 0
+param set-default CA_TILTING_TYPE 1
 
 #set MIXER generic_tilting_sitl
 #set MIXER_AUX generic_tilting_sitl
