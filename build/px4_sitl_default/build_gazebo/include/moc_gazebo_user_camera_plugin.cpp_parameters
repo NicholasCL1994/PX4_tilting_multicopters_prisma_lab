@@ -48,7 +48,11 @@
 -I/home/libardi/PX4_tilting_multicopters_prisma_lab/build/px4_sitl_default/mavlink
 -I/home/libardi/PX4_tilting_multicopters_prisma_lab/build/px4_sitl_default/mavlink/mavlink/v2.0
 -I/usr/include/OGRE
--I/usr/include/OGRE/Paging
+-I/usr/include
+-I/usr/include
+-I/usr/include/OGRE
+-I/usr/include
+-I/usr/include/Paging
 -I/usr/include/opencv4
 -I/home/libardi/PX4_tilting_multicopters_prisma_lab/Tools/sitl_gazebo/external/OpticalFlow/include
 -I/usr/include

@@ -182,6 +182,7 @@ set(models
 	NDT_tilting
 	baby_k
 	baby_andromeda
+	baby_andromeda2
 	#*** END-CUSTOM
 )
 
