@@ -67,6 +67,8 @@ elif [[ "${UBUNTU_RELEASE}" == "18.04" ]]; then
 	echo "Ubuntu 18.04"
 elif [[ "${UBUNTU_RELEASE}" == "20.04" ]]; then
 	echo "Ubuntu 20.04"
+elif [[ "${UBUNTU_RELEASE}" == "22.04" ]]; then
+	echo "Ubuntu 22.04"
 fi
 
 
@@ -124,6 +126,7 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 		build-essential \
 		flex \
 		g++-multilib \
+		gazebo\
 		gcc-multilib \
 		gdb-multiarch \
 		genromfs \
@@ -204,9 +207,12 @@ if [[ $INSTALL_SIM == "true" ]]; then
 	elif [[ "${UBUNTU_RELEASE}" == "20.04" ]]; then
 		java_version=13
 		gazebo_version=11
+	elif [[ "${UBUNTU_RELEASE}" == "22.04" ]]; then
+		java_version=17
+		gazebo_version=$(gazebo --version | grep -oP '\d+(\.\d+)+' | head -n 1)
 	else
-		java_version=14
-		gazebo_version=11
+		java_version=$(java --version | grep -oP '\d+(\.\d+)+' | head -n 1)
+		gazebo_version=$(gazebo --version | grep -oP '\d+(\.\d+)+' | head -n 1)
 	fi
 	# Java (jmavsim or fastrtps)
 	sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
@@ -226,14 +232,14 @@ if [[ $INSTALL_SIM == "true" ]]; then
 	sudo apt-get update -y --quiet
 	sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
 		dmidecode \
-		gazebo$gazebo_version \
+		gazebo \
 		gstreamer1.0-plugins-bad \
 		gstreamer1.0-plugins-base \
 		gstreamer1.0-plugins-good \
 		gstreamer1.0-plugins-ugly \
 		gstreamer1.0-libav \
 		libeigen3-dev \
-		libgazebo$gazebo_version-dev \
+		libgazebo-dev \
 		libgstreamer-plugins-base1.0-dev \
 		libimage-exiftool-perl \
 		libopencv-dev \
