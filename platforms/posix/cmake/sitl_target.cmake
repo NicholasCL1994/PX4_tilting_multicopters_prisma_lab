@@ -188,6 +188,7 @@ set(models
 
 set(worlds
 	none
+	baylands_windy
 	baylands
 	empty
 	ksql_airport
