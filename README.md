@@ -1,25 +1,29 @@
-## A PX4 Integrated Framework for Modeling and Controlling Multicopters with Tiltable Rotors
-
-__abstract__ This repo presents a general framework for multicopters equipped with tiltable rotors (tilting multicopters). Differently from classical flat multicopters, tilting multicopters can be fully actuated systems able to decouple position and attitude control. The proposed framework has been trans-parently integrated into the widely used PX4 control stack, an open-source controller for ground and aerial systems, to fully exploit its high-level interfaces and functionalities and, at the same time, simplify the creation of new devices with tilting propellers. Simulation tools have been also added to the PX4 simulation framework, based on its Software-In-The-Loop (SITL) system and a set of simulated experiments in a dynamic robotic simulator have been carried out to demonstrate the effectiveness of this system. 
-
-## Article 
-The description of the firmware architecture, the integration with the standard PX4 control stack, as well as its integration with a PixHawk autopilot is described in the following article:
-
-``Salvatore Marcellini, Jonathan Cacace, Vincenzo Lippiello, "A PX4 Integrated Framework for Modeling and Controlling Multicopters with Tiltable Rotors", submitted to the 2023 International Conference on Unmanned Aircraft System (ICUAS ’23)  June 6 – 9, 2023  Warsaw, Poland``
-
-This work is currently under review
-
-## Video
-https://youtu.be/N61GHj4W_II
+## Andromeda SITL repo
 
 # How to use
 Clone the repository with submodules <br />
-`git clone --recurse-submodule https://github.com/prisma-lab/PX4_tilting_multicopters.git`
+`git clone --recurse-submodule https://github.com/NicholasCL1994/prisma-lab/PX4_tilting_multicopters.git`
 
 ## Run the simulation
-For omnidirectional tilting drone <br />
-`make px4_sitl gazebo_NDT_tilting`
 
-For one-tilt tilting drone <br />
+To fly Andromeda you will need the following softwares installed:
+ - QGroundControl (QGC)
+ - gamepad-tool 
+
+# To get QGC on ubuntu, run:
+`wget https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl.AppImage`
+`chmod +x QGroundControl.AppImage`
+`./QGroundControl.AppImage`
+
+# RC Controller Mapping
+The axis might be incorrectly mapped by QGC. If that is the case, you can follow the instructions next: download the gamepad-tool from https://generalarcade.com/gamepadtool/ . 
+With your controller plugged to your computer (e.g. via USB), open the gamepad-tool and 'Create A New Mapping'. After finishing, you should be able to see your mapping in the console. 
+Now you should 'Set Mapping As Environment Variable'. Close the tool and reboot your computer.
+To make sure your mapping is set as environment variable you can `echo $SDL_GAMECONTROLLERCONFIG`.  
+
+# Gazebo simulation
+Finally, to run the gazebo simulation with Andromeda, go to PX4 main directory and run on the terminal:
 `make px4_sitl gazebo_baby_k`
+
+Remember that QGC should be running together with gazebo simulation, it is the interface between you and the simulation. There you can check the mapping under 'Vehicle Setup -> Joystick'
 
