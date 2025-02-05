@@ -1,3 +1,0 @@
-. ${R}etc/init.d/rc.uuv_defaults
-param set-default CBRK_AIRSPD_CHK 162128
-set MIXER uuv_x

@@ -109,3 +109,5 @@ param set-default CA_SV_TL2_MINA -30
 param set-default CA_SV_TL3_MAXA 30
 param set-default CA_SV_TL3_MINA -30
 
+param set-default WV_EN 1
+

@@ -183,6 +183,7 @@ set(models
 	baby_k
 	baby_andromeda
 	baby_andromeda2
+	andromeda_quad
 	#*** END-CUSTOM
 )
 

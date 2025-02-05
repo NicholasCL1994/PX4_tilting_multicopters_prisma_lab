@@ -417,6 +417,10 @@ ControlAllocator::Run()
 			c[1](5) = vehicle_thrust_setpoint.xyz[2];
 		}
 
+		// std::printf("\nnum_control_allocation = %i", _num_control_allocation);
+		// std::printf("\nnum_actuators 0 = %i", _control_allocation[0]->NUM_ACTUATORS);
+		// std::printf("\nnum_actuators 1 = %i", _control_allocation[1]->NUM_ACTUATORS);
+		
 		/*** CUSTOM ***/
 		if( source != EffectivenessSource::TILTING_MULTIROTOR ||
 		   ( source == EffectivenessSource::TILTING_MULTIROTOR &&
@@ -436,19 +440,25 @@ ControlAllocator::Run()
 
 				_control_allocation[i]->clipActuatorSetpoint();
 			}
+			
+			// for (int i = 0; i < 4; i++)
+			// {
+			// 	std::printf("sp(%i) = %4.2f, ", i, (double)_control_allocation[1]->_actuator_sp(i));
+			// }
+			// std::printf("\n");
 		}
 		else{
-
 
 			//Vertical forces
 			_control_allocation[0]->setControlSetpoint(c[0]);
 			_control_allocation[0]->allocate();
-			vertical_actuator_sp = _control_allocation[0]->getActuatorSetpoint();
+			vertical_actuator_sp = _control_allocation[0]->getActuatorSetpoint();		
 
 			//Lateral forces
 			_control_allocation[1]->setControlSetpoint(c[0]);
 			_control_allocation[1]->allocate();
 			lateral_actuator_sp = _control_allocation[1]->getActuatorSetpoint();//_control_allocation[1]->getActuatorSetpoint();
+			// std::printf("\nlateral actuator: %4.2f", (double)lateral_actuator_sp.max());
 			// PX4_INFO("v_sp %d : %f ", 0, (double)lateral_actuator_sp(0));
 			
 			//Rotors
@@ -465,11 +475,13 @@ ControlAllocator::Run()
 				if( vertical_actuator_sp(i) < 0.1f){
 					servo_sp(i) = 0.00f;
 					// PX4_INFO("tilt_true %d : %f ", i, (double)servo_sp(i));
+					// std::printf("servo_sp(%i) = %4.2f, ", i, servo_sp);
 				}
 				else{
 					servo_sp(i) = atan2f(lateral_actuator_sp(i),vertical_actuator_sp(i));
-					// PX4_INFO("tilt %d : %f ", i, (double)servo_sp(i));
+					// std::printf("servo_sp(%i) = %4.2f, ", i, servo_sp);
 				}
+				// std::printf("\n");
 				// PX4_INFO("Lat: %f", (double)lateral_actuator_sp(i));
 				// PX4_INFO("Vert: %f", (double)vertical_actuator_sp(i));
 
@@ -524,6 +536,14 @@ ControlAllocator::Run()
 		publish_control_allocator_status();
 		_last_status_pub = now;
 	}
+
+	// for (int i = 0; i < _num_actuators[0]; i++)
+	// {
+	// 	std::printf("\nservos_sp(%i): %f", i, (double)servo_sp(i));
+	// 	std::printf(" | actuator_sp(%i): %f", i, (double)actuator_sp(i));
+	// 	std::printf(" | lateral_sp(%i): %f", i, (double)lateral_actuator_sp(i));
+	// 	std::printf(" | vertical_sp(%i): %f", i, (double)vertical_actuator_sp(i));	
+	// }
 
 	perf_end(_loop_perf);
 }

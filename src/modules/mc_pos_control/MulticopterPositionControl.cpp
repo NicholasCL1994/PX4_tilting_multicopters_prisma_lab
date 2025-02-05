@@ -518,10 +518,12 @@ void MulticopterPositionControl::Run()
 					const float sin_yaw = sinf(attitude_setpoint.yaw_body);
 					const float cos_yaw = cosf(attitude_setpoint.yaw_body);
 
+					/* thrust_body[0] == Fx */
 					attitude_setpoint.thrust_body[0] = cos_yaw * local_pos_sp.thrust[0] + sin_yaw * local_pos_sp.thrust[1];
 					attitude_setpoint.thrust_body[0] = math::constrain(attitude_setpoint.thrust_body[0],
 								-1.0f*_param_f_max.get(), _param_f_max.get());
 
+					/* thrust_body[1] == Fy */
 					attitude_setpoint.thrust_body[1] = -sin_yaw * local_pos_sp.thrust[0] + cos_yaw * local_pos_sp.thrust[1];
 					attitude_setpoint.thrust_body[1] = math::constrain(attitude_setpoint.thrust_body[1],
 								-1.0f*_param_f_max.get(), _param_f_max.get());

@@ -54,7 +54,7 @@ BATT_SMBUS::BATT_SMBUS(const I2CSPIDriverConfig &config, SMBus *interface) :
 	int32_t battsource = 1;
 	int32_t batt_device_type = static_cast<int32_t>(SMBUS_DEVICE_TYPE::UNDEFINED);
 
-	param_set(param_find("BAT1_SOURCE"), &battsource);
+	param_set(param_find("BAT_SOURCE"), &battsource);
 	param_get(param_find("BAT1_SMBUS_MODEL"), &batt_device_type);
 
 
@@ -84,7 +84,7 @@ BATT_SMBUS::~BATT_SMBUS()
 	}
 
 	int32_t battsource = 0;
-	param_set(param_find("BAT1_SOURCE"), &battsource);
+	param_set(param_find("BAT_SOURCE"), &battsource);
 }
 
 void BATT_SMBUS::RunImpl()

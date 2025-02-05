@@ -395,12 +395,12 @@ else
 
 		. ${R}etc/init.d/rc.sensors
 
-		if param compare -s BAT1_SOURCE 2
+		if param compare -s BAT_SOURCE 2
 		then
 			esc_battery start
 		fi
 
-		if ! param compare BAT1_SOURCE 1
+		if ! param compare BAT_SOURCE 1
 		then
 			battery_status start
 		fi

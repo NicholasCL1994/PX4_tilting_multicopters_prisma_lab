@@ -31,19 +31,14 @@
 param set-default SYS_CTRL_ALLOC 1 #dynamic allocation
 param set-default CA_AIRFRAME 11 #11 Tilting Multirotor, 0 multirotor
 
-set MAV_TYPE 14 #octorotor (0 is generic)
+set MAV_TYPE 2 #quadrotor (0 is generic)
 param set-default MC_PITCH_ON_TILT 1
 param set-default CA_TILTING_TYPE 0
 
-#set MIXER generic_tilting_sitl
-#set MIXER_AUX generic_tilting_sitl
-#set MIXER_FILE etc/mixers-sitl/generic_tilting_sitl.aux.mix
-#set MIXER custom
-
-# Set all 8 channels
-set PWM_OUT 12345678
+# Set all channels
+set PWM_OUT 1234
 set PWM_AUX_OUT 1234
-param set-default CA_ROTOR_COUNT 8
+param set-default CA_ROTOR_COUNT 4
 param set-default CA_SV_TL_COUNT 4
 
 param set-default CA_ROTOR0_PX 0.25
@@ -66,34 +61,10 @@ param set-default CA_ROTOR3_PY -0.32
 param set-default CA_ROTOR3_PZ 0.05
 param set-default CA_ROTOR3_KM 0.05
 
-param set-default CA_ROTOR4_PX 0.25
-param set-default CA_ROTOR4_PY 0.32
-param set-default CA_ROTOR4_PZ -0.05
-param set-default CA_ROTOR4_KM -0.05
-
-param set-default CA_ROTOR5_PX 0.25
-param set-default CA_ROTOR5_PY -0.32
-param set-default CA_ROTOR5_PZ -0.05
-param set-default CA_ROTOR5_KM 0.05
-
-param set-default CA_ROTOR6_PX -0.25
-param set-default CA_ROTOR6_PY -0.32
-param set-default CA_ROTOR6_PZ -0.05
-param set-default CA_ROTOR6_KM -0.05
-
-param set-default CA_ROTOR7_PX -0.25
-param set-default CA_ROTOR7_PY 0.32
-param set-default CA_ROTOR7_PZ -0.05
-param set-default CA_ROTOR7_KM 0.05
-
 param set-default PWM_MAIN_FUNC1 101 #esc
 param set-default PWM_MAIN_FUNC2 102
 param set-default PWM_MAIN_FUNC3 103
 param set-default PWM_MAIN_FUNC4 104
-param set-default PWM_MAIN_FUNC5 105
-param set-default PWM_MAIN_FUNC6 106
-param set-default PWM_MAIN_FUNC7 107
-param set-default PWM_MAIN_FUNC8 108
 param set-default PWM_MAIN_FUNC9 201 #servo
 param set-default PWM_MAIN_FUNC10 202
 param set-default PWM_MAIN_FUNC11 203
@@ -109,5 +80,5 @@ param set-default CA_SV_TL2_MINA -30
 param set-default CA_SV_TL3_MAXA 30
 param set-default CA_SV_TL3_MINA -30
 
-param set-default WV_EN 1
+# param set-default WV_EN 1
 

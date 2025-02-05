@@ -31,7 +31,7 @@
 param set-default SYS_CTRL_ALLOC 1 #dynamic allocation
 param set-default CA_AIRFRAME 11 #11 Tilting Multirotor, 0 multirotor
 
-set MAV_TYPE 14 #octorotor (0 is generic)
+set MAV_TYPE 2 #octorotor (0 is generic)
 param set-default MC_PITCH_ON_TILT 1
 param set-default CA_TILTING_TYPE 0
 
@@ -41,26 +41,30 @@ param set-default CA_TILTING_TYPE 0
 #set MIXER custom
 
 # Set all 8 channels
-set PWM_OUT 12345678
+set PWM_OUT 1234
 set PWM_AUX_OUT 1234
 param set-default CA_ROTOR_COUNT 4
 param set-default CA_SV_TL_COUNT 4
 
+#left front
 param set-default CA_ROTOR0_PX 0.09
 param set-default CA_ROTOR0_PY -0.14
 param set-default CA_ROTOR0_PZ 0.03
 param set-default CA_ROTOR0_KM -0.05
 
+#right front
 param set-default CA_ROTOR1_PX 0.09
 param set-default CA_ROTOR1_PY 0.14
 param set-default CA_ROTOR1_PZ 0.03
 param set-default CA_ROTOR1_KM 0.05
 
+#right rear
 param set-default CA_ROTOR2_PX -0.09
 param set-default CA_ROTOR2_PY 0.14
 param set-default CA_ROTOR2_PZ 0.03
 param set-default CA_ROTOR2_KM -0.05
 
+#left rear
 param set-default CA_ROTOR3_PX -0.09
 param set-default CA_ROTOR3_PY -0.14
 param set-default CA_ROTOR3_PZ 0.03

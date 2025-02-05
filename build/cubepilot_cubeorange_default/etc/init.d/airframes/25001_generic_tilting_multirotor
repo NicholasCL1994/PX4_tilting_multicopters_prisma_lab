@@ -1,6 +1,0 @@
-param set-default SYS_CTRL_ALLOC 1 #dynamic allocation
-param set-default CA_AIRFRAME 11 #Tilting Multirotor
-. ${R}etc/init.d/rc.mc_defaults
-param set-default MAV_TYPE 14 #Octorotor -- to change in case --
-set PWM_OUT 12345678
-set PWM_AUX_OUT 123456
