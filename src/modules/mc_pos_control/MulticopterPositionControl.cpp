@@ -557,6 +557,8 @@ void MulticopterPositionControl::Run()
 						_last_angles_setpoint = tilting_mc_angles_sp.timestamp;
 					}
 
+					std::printf("Loop do capiroto\n");
+
 				}
 
 				/* For the H-tilting multirotor the tilt_servo angle must always be updated */

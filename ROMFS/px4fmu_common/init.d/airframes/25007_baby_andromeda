@@ -23,7 +23,7 @@
 # @output AUX3 motor 3
 # @output AUX4 motor 4
 #
-# @maintainer Alessandro De Crescenzo <ale-dc@live.it>
+# @maintainer Nicholas C. Libardi <libardi@ifb.uni-stuttgart.de>
 #
 
 . ${R}etc/init.d/rc.mc_defaults
@@ -37,18 +37,13 @@ param set-default CA_TILTING_TYPE 0
 
 param set-default WV_EN 1
 
-#set MIXER generic_tilting_sitl
-#set MIXER_AUX generic_tilting_sitl
-#set MIXER_FILE etc/mixers-sitl/generic_tilting_sitl.aux.mix
-#set MIXER custom
-
 # Set all 8 channels
 set PWM_OUT 12345678
 set PWM_AUX_OUT 1234
 param set-default CA_ROTOR_COUNT 4
 param set-default CA_SV_TL_COUNT 4
 
-param set-default CA_ROTOR0_PX 0.09
+param set-default CA_ROTOR0_PX -0.09
 param set-default CA_ROTOR0_PY -0.14
 param set-default CA_ROTOR0_PZ 0.03
 param set-default CA_ROTOR0_KM -0.05
@@ -56,14 +51,14 @@ param set-default CA_ROTOR0_KM -0.05
 param set-default CA_ROTOR1_PX 0.09
 param set-default CA_ROTOR1_PY 0.14
 param set-default CA_ROTOR1_PZ 0.03
-param set-default CA_ROTOR1_KM 0.05
+param set-default CA_ROTOR1_KM -0.05
 
 param set-default CA_ROTOR2_PX -0.09
 param set-default CA_ROTOR2_PY 0.14
 param set-default CA_ROTOR2_PZ 0.03
-param set-default CA_ROTOR2_KM -0.05
+param set-default CA_ROTOR2_KM 0.05
 
-param set-default CA_ROTOR3_PX -0.09
+param set-default CA_ROTOR3_PX 0.09
 param set-default CA_ROTOR3_PY -0.14
 param set-default CA_ROTOR3_PZ 0.03
 param set-default CA_ROTOR3_KM 0.05
@@ -76,6 +71,9 @@ param set-default PWM_AUX_FUNC1 201 #servo
 param set-default PWM_AUX_FUNC2 202
 param set-default PWM_AUX_FUNC3 203
 param set-default PWM_AUX_FUNC4 204
+
+param set-default PWM_AUX_REV 12 #parameter to correct servos revolution direction
+                                 #(right hand side servos turning direction were flipped)
 
 # Limits for tilting angles
 param set-default CA_SV_TL0_MAXA 30 

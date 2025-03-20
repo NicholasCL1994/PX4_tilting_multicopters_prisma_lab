@@ -440,10 +440,10 @@ ControlAllocator::Run()
 
 				_control_allocation[i]->clipActuatorSetpoint();
 			}
-			
-			// for (int i = 0; i < 4; i++)
+
+			// for (int i = 0; i < NUM_ACTUATORS-1; i++)
 			// {
-			// 	std::printf("sp(%i) = %4.2f, ", i, (double)_control_allocation[1]->_actuator_sp(i));
+			// 	std::printf("sp(%i) = %4.2f, ", i, (double)_control_allocation[0]->_actuator_sp(i));
 			// }
 			// std::printf("\n");
 		}

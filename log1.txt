@@ -1,0 +1,11 @@
+[0/13] Performing build step for 'sitl_gazebo'
+ninja: no work to do.
+[2/13] No install step for 'sitl_gazebo'
+[3/13] Completed 'sitl_gazebo'
+[4/13] Generating px4 event json file from source
+[5/13] Generating combined event json file
+[6/13] Generating component_general.json and checksums.h
+[7/13] ROMFS: copying extras
+[8/13] Building CXX object src/modules/mc_pos_control/CMakeFiles/modules__mc_pos_control.dir/MulticopterPositionControl.cpp.o
+[9/13] Linking CXX static library src/modules/mc_pos_control/libmodules__mc_pos_control.a
+ninja: build stopped: interrupted by user.

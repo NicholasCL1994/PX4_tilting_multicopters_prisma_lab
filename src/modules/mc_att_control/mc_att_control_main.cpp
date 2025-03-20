@@ -191,11 +191,8 @@ MulticopterAttitudeControl::generate_attitude_setpoint(const Quatf &q, float dt,
 		_man_Fy_input_filter.update(_manual_control_setpoint.y * _man_F_max);
 		const float fx_sp = _man_Fx_input_filter.getState();
 		const float fy_sp = _man_Fy_input_filter.getState();
-		// pitch_des = _manual_control_setpoint.aux1;
-		// PX4_INFO("aux1: %f ", (double)pitch_des)
 
-		// PX4_INFO("fx_sp: %f", (double)_manual_control_setpoint.x);
-		// PX4_INFO("fy_sp: %f", (double)_manual_control_setpoint.y);
+		// std::printf("x = %f		|		y = %f\n\n", (double)_manual_control_setpoint.x, (double)_manual_control_setpoint.y);
 
 		/* Check if the drone is a H-tilting multirotor */
 		if (_param_tilting_type.get() == 0 && _param_mpc_pitch_on_tilt.get()){
