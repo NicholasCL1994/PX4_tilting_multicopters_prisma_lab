@@ -1,5 +1,5 @@
 #pragma once
 #include <stdint.h>
 namespace component_information {
-static constexpr uint32_t component_general_crc = 790534533;
+static constexpr uint32_t component_general_crc = 2050823938;
 }

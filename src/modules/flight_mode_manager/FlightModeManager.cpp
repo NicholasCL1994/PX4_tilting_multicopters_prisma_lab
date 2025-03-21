@@ -109,7 +109,7 @@ void FlightModeManager::Run()
 		_vehicle_land_detected_sub.update();
 
 		if (_vehicle_status_sub.update()) {
-			if (/*_vehicle_status_sub.get().is_vtol &&*/ (_wv_controller == nullptr)) {
+			if ((_vehicle_status_sub.get().is_vtol || _param_airframe.get() == 11) &&  (_wv_controller == nullptr)) {
 				// if vehicle is a VTOL we want to enable weathervane capabilities
 				_wv_controller = new WeatherVane();
 			}

@@ -3,9 +3,9 @@
 /* Do not edit! */
 #pragma once
 
-#define PX4_GIT_VERSION_STR "5dd078a57643306a693defb34b9bdb8c4da8e640"
-#define PX4_GIT_VERSION_BINARY 0x5dd078a57643306a
-#define PX4_GIT_TAG_STR "v1.9.0-rc3-6-g5dd078a576-dirty"
+#define PX4_GIT_VERSION_STR "48bfd8f8f8ea88fa721ec77c35ad10719972c592"
+#define PX4_GIT_VERSION_BINARY 0x48bfd8f8f8ea88fa
+#define PX4_GIT_TAG_STR "v1.9.0-rc3-7-g48bfd8f8f8-dirty"
 #define PX4_GIT_BRANCH_NAME "andromeda"
 
 #define PX4_GIT_OEM_VERSION_STR  ""
@@ -14,7 +14,3 @@
 
 #define MAVLINK_LIB_GIT_VERSION_STR  "3b52eac09c2e37325e4bc49cd2667ea37bf1d7d2"
 #define MAVLINK_LIB_GIT_VERSION_BINARY 0x3b52eac09c2e3732
-
-#define NUTTX_GIT_VERSION_STR  "91bece51afbe7da9db12e3695cdbb4f4bba4bc83"
-#define NUTTX_GIT_VERSION_BINARY 0x91bece51afbe7da9
-#define NUTTX_GIT_TAG_STR  "v11.0.0"
